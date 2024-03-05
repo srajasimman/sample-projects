@@ -1,5 +1,7 @@
 #!/usr/bin/bash
-branches=$(git branch -r --format="* [%(refname:lstrip=-1)](%(refname))" | grep -Ev "(HEAD|main)")
+branches=$(git branch -r --format="* [%(refname:lstrip=-1)](../../tree/%(refname:lstrip=-1))" | grep -Ev "(HEAD|main)")
 echo "## Projects Branches" > README.md
 echo "$branches" >> README.md
-exit 0
+git add README.md
+git commit -m ":robot: Updated the branch list in README.md"
+git push origin main
