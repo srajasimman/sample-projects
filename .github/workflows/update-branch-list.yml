@@ -1,0 +1,28 @@
+name: Update Branch List
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update Branch List
+        run: |
+          branches=$(git branch -r --format="* [%(refname:lstrip=-1)](%(refname))" | grep -Ev "(HEAD|main)")
+          echo "## Projects Branches" > README.md
+          echo "$branches" >> README.md
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m ":robot: Updated the branch list in README.md"
+          git push
