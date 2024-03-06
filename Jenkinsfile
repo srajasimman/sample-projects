@@ -10,6 +10,16 @@ pipeline {
         string(name: 'DOCKER_IMAGE', defaultValue: 'java-springboot-maven', description: 'Docker Image Name')
         string(name: 'DOCKER_TAG', defaultValue: 'latest', description: 'Docker Image Tag')
     }
+    options {
+        timeout(time: 1, unit: 'HOURS')
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+        githubProjectProperty(
+            displayName: '',
+            projectUrlStr: '${params.GIT_REPO}'
+        )
+    }
     stages {
         stage('Checkout') {
             steps {
