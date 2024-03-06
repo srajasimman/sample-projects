@@ -17,7 +17,7 @@ pipeline {
         timestamps()
         githubProjectProperty(
             displayName: '',
-            projectUrlStr: 'https://github.com/srajasimman/sample-projects.git'
+            projectUrlStr: '${params.GIT_REPO}'
         )
     }
     stages {
