@@ -10,6 +10,17 @@ pipeline {
         string(name: 'DOCKER_IMAGE', defaultValue: 'javascript-nodejs-expressjs', description: 'Docker Image Name')
         string(name: 'DOCKER_TAG', defaultValue: 'latest', description: 'Docker Image Tag')
     }
+    options {
+        timeout(time: 1, unit: 'HOURS')
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        ansiColor('xterm')
+        timestamps()
+        githubProjectProperty(
+            displayName: '',
+            projectUrlStr: 'https://github.com/srajasimman/sample-projects.git'
+        )
+    }
     stages {
         stage('Checkout') {
             steps {
