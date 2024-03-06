@@ -14,7 +14,6 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
         disableConcurrentBuilds()
         buildDiscarder(logRotator(numToKeepStr: '10'))
-        ansiColor('xterm')
         timestamps()
         githubProjectProperty(
             displayName: '',
