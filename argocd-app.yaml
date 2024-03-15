@@ -1,0 +1,80 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: java-springboot-gradle
+spec:
+  destination:
+    name: ''
+    namespace: sample-projects
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: helm/java-springboot-gradle
+    repoURL: 'https://github.com/srajasimman/sample-projects.git'
+    targetRevision: java-springboot-gradle
+  sources: []
+  project: default
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: java-springboot-maven
+spec:
+  destination:
+    name: ''
+    namespace: sample-projects
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: helm/java-springboot-maven
+    repoURL: 'https://github.com/srajasimman/sample-projects.git'
+    targetRevision: java-springboot-maven
+  sources: []
+  project: default
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-flask-webapp
+spec:
+  destination:
+    name: ''
+    namespace: sample-projects
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: helm/python-flask-webapp
+    repoURL: 'https://github.com/srajasimman/sample-projects.git'
+    targetRevision: python-flask-webapp
+  sources: []
+  project: default
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: javascript-nodejs-expressjs
+spec:
+  destination:
+    name: ''
+    namespace: sample-projects
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: helm/javascript-nodejs-expressjs
+    repoURL: 'https://github.com/srajasimman/sample-projects.git'
+    targetRevision: javascript-nodejs-expressjs
+  sources: []
+  project: default
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
