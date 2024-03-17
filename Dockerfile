@@ -17,4 +17,6 @@ ENV APP_HOME=/usr/app/
 
 WORKDIR $APP_HOME
 COPY --from=build $APP_HOME/build/libs/*.jar $APP_HOME/app.jar
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser $APP_HOME
+USER appuser
 ENTRYPOINT ["java", "-jar", "app.jar"]
