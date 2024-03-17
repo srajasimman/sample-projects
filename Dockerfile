@@ -1,6 +1,6 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
 FROM python:3.12-slim
-
+LABEL org.opencontainers.image.source https://github.com/srajasimman/sample-projects
 EXPOSE 5000
 
 # Keeps Python from generating .pyc files in the container
