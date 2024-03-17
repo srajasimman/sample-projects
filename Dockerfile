@@ -1,4 +1,5 @@
 FROM node:lts-alpine
+LABEL org.opencontainers.image.source https://github.com/srajasimman/sample-projects
 ENV NODE_ENV=production
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
