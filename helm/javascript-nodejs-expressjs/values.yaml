@@ -87,6 +87,12 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
+metrics:
+  serviceMonitor:
+    enabled: false
+    interval: 30s
+    scrapeTimeout: 30s
+
 # Additional volumes on the output Deployment definition.
 volumes: []
 # - name: foo
