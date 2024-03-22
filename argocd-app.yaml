@@ -29,7 +29,7 @@ spec:
   sources: []
   project: default
   syncPolicy:
-    automated: null
+    automated: {}
     syncOptions:
       - CreateNamespace=true
 ---
@@ -63,7 +63,7 @@ spec:
   sources: []
   project: default
   syncPolicy:
-    automated: null
+    automated: {}
     syncOptions:
       - CreateNamespace=true
 ---
@@ -97,7 +97,7 @@ spec:
   sources: []
   project: default
   syncPolicy:
-    automated: null
+    automated: {}
     syncOptions:
       - CreateNamespace=true
 ---
@@ -131,6 +131,6 @@ spec:
   sources: []
   project: default
   syncPolicy:
-    automated: null
+    automated: {}
     syncOptions:
       - CreateNamespace=true
