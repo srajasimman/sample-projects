@@ -12,6 +12,20 @@ spec:
     path: helm/java-springboot-gradle
     repoURL: 'https://github.com/srajasimman/sample-projects.git'
     targetRevision: java-springboot-gradle
+    helm:
+      parameters:
+        - name: 'ingress.hosts[0].host'
+          value: java-springboot-gradle.10-10-30-68.sslip.io
+        - name: ingress.enabled
+          value: 'true'
+        - name: ingress.className
+          value: nginx
+        - name: 'ingress.hosts[0].paths[0].path'
+          value: /
+        - name: 'ingress.hosts[0].paths[0].pathType'
+          value: ImplementationSpecific
+        - name: metrics.serviceMonitor.enabled
+          value: 'true'
   sources: []
   project: default
   syncPolicy:
@@ -32,6 +46,20 @@ spec:
     path: helm/java-springboot-maven
     repoURL: 'https://github.com/srajasimman/sample-projects.git'
     targetRevision: java-springboot-maven
+    helm:
+      parameters:
+        - name: 'ingress.hosts[0].host'
+          value: java-springboot-maven.10-10-30-68.sslip.io
+        - name: ingress.enabled
+          value: 'true'
+        - name: ingress.className
+          value: nginx
+        - name: 'ingress.hosts[0].paths[0].path'
+          value: /
+        - name: 'ingress.hosts[0].paths[0].pathType'
+          value: ImplementationSpecific
+        - name: metrics.serviceMonitor.enabled
+          value: 'true'
   sources: []
   project: default
   syncPolicy:
@@ -52,6 +80,20 @@ spec:
     path: helm/python-flask-webapp
     repoURL: 'https://github.com/srajasimman/sample-projects.git'
     targetRevision: python-flask-webapp
+    helm:
+      parameters:
+        - name: 'ingress.hosts[0].host'
+          value: python-flask-webapp.10-10-30-68.sslip.io
+        - name: ingress.enabled
+          value: 'true'
+        - name: ingress.className
+          value: nginx
+        - name: 'ingress.hosts[0].paths[0].path'
+          value: /
+        - name: 'ingress.hosts[0].paths[0].pathType'
+          value: ImplementationSpecific
+        - name: metrics.serviceMonitor.enabled
+          value: 'true'
   sources: []
   project: default
   syncPolicy:
@@ -72,6 +114,20 @@ spec:
     path: helm/javascript-nodejs-expressjs
     repoURL: 'https://github.com/srajasimman/sample-projects.git'
     targetRevision: javascript-nodejs-expressjs
+    helm:
+      parameters:
+        - name: 'ingress.hosts[0].host'
+          value: javascript-nodejs-expressjs.10-10-30-68.sslip.io
+        - name: ingress.enabled
+          value: 'true'
+        - name: ingress.className
+          value: nginx
+        - name: 'ingress.hosts[0].paths[0].path'
+          value: /
+        - name: 'ingress.hosts[0].paths[0].pathType'
+          value: ImplementationSpecific
+        - name: metrics.serviceMonitor.enabled
+          value: 'true'
   sources: []
   project: default
   syncPolicy:
