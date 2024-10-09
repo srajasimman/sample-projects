@@ -5,9 +5,9 @@ pipeline {
     }
     parameters {
         string(name: 'GIT_REPO', defaultValue: 'https://github.com/srajasimman/sample-projects.git', description: 'Git repo')
-        string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'Git branch')
+        string(name: 'GIT_BRANCH', defaultValue: 'golang-api', description: 'Git branch')
         string(name: 'DOCKER_REPO', defaultValue: 'docker.io/optitcloud', description: 'Docker Container Registry')
-        string(name: 'DOCKER_IMAGE', defaultValue: 'hello-world', description: 'Docker Image Name')
+        string(name: 'DOCKER_IMAGE', defaultValue: 'golang-api', description: 'Docker Image Name')
         string(name: 'DOCKER_TAG', defaultValue: 'latest', description: 'Docker Image Tag')
     }
     options {
