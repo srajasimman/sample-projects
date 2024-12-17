@@ -2,7 +2,8 @@ name: Publish Docker Image to GHCR
 
 on:
   push:
-    branches: 
+    branches:
+      - golang-api
       - java-springboot-gradle
       - java-springboot-maven
       - javascript-nodejs-expressjs
