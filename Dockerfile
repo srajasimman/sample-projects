@@ -1,6 +1,7 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
 FROM python:3.12-slim
-LABEL org.opencontainers.image.source=https://github.com/srajasimman/sample-projects \
+
+LABEL org.opencontainers.image.source=https://github.com/srajasimman/sample-projects/tree/python-flask-webapp \
         org.opencontainers.image.authors="Rajasimman S" \
         org.opencontainers.image.title="python-flask-webapp" \
         org.opencontainers.image.description="Sample Projects for learning purposes"
