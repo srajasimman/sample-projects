@@ -1,6 +1,6 @@
 FROM maven:3.9.6-sapmachine-17 AS build
 
-LABEL org.opencontainers.image.source=https://github.com/srajasimman/sample-projects \
+LABEL org.opencontainers.image.source=https://github.com/srajasimman/sample-projects/tree/java-springboot-maven \
         org.opencontainers.image.authors="Rajasimman S" \
         org.opencontainers.image.title="java-springboot-maven" \
         org.opencontainers.image.description="Sample Projects for learning purposes"
