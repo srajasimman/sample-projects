@@ -134,3 +134,37 @@ spec:
     automated: {}
     syncOptions:
       - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: golang-api
+spec:
+  destination:
+    name: ''
+    namespace: sample-projects
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: helm/golang-api
+    repoURL: 'https://github.com/srajasimman/sample-projects.git'
+    targetRevision: golang-api
+    helm:
+      parameters:
+        - name: 'ingress.hosts[0].host'
+          value: golang-api.10-10-30-68.sslip.io
+        - name: ingress.enabled
+          value: 'true'
+        - name: ingress.className
+          value: nginx
+        - name: 'ingress.hosts[0].paths[0].path'
+          value: /
+        - name: 'ingress.hosts[0].paths[0].pathType'
+          value: ImplementationSpecific
+        - name: metrics.serviceMonitor.enabled
+          value: 'true'
+  sources: []
+  project: default
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
