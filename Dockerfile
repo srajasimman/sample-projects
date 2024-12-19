@@ -1,13 +1,22 @@
 FROM gradle:8-jdk17 AS build
+LABEL org.opencontainers.image.source=https://github.com/srajasimman/sample-projects/tree/java-springboot-gradle \
+        org.opencontainers.image.authors="Rajasimman S" \
+        org.opencontainers.image.title="java-springboot-gradle" \
+        org.opencontainers.image.description="Sample Projects for learning purposes"
+
 ENV APP_HOME=/usr/app
+
 WORKDIR $APP_HOME
+
 COPY build.gradle settings.gradle $APP_HOME/
 COPY gradle $APP_HOME/gradle
 COPY --chown=gradle:gradle . /home/gradle/src
-USER root
-RUN chown -R gradle /home/gradle/src
 
+USER root
+
+RUN chown -R gradle /home/gradle/src
 RUN gradle build || return 0
+
 COPY . .
 RUN gradle clean build
 
