@@ -1,5 +1,10 @@
 # Build stage
 FROM golang:alpine AS builder
+LABEL org.opencontainers.image.source=https://github.com/srajasimman/sample-projects/tree/golang-api \
+        org.opencontainers.image.authors="Rajasimman S" \
+        org.opencontainers.image.title="golang-api" \
+        org.opencontainers.image.description="Sample Projects for learning purposes"
+
 RUN apk add --no-cache git ca-certificates
 WORKDIR /go/src/app
 COPY . .
